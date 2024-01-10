@@ -70,7 +70,6 @@ public class TestFunction : MonoBehaviour
         //changeColor();
         //Invoke(nameof(changeColor), 5);
         InvokeRepeating(nameof(changeColor), 1, 0.5f);
-        
     }
 
     private void OnMouseUp()

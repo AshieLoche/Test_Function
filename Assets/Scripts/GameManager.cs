@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private GameObject cube;
+    [SerializeField] private GameObject cube;
 
     // Start is called before the first frame update
     void Start()
     {
-        cube = GameObject.Find("Cube");
+        //cube = GameObject.Find("Cube");
     }
 
     // Update is called once per frame

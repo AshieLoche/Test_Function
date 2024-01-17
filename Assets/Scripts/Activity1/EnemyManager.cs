@@ -8,7 +8,6 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] float rotationSpeed = 50f;
     Quaternion targetRotation;
-    bool isTouchingPlayer = false;
 
     // Start is called before the first frame update
     void Start()
@@ -36,29 +35,13 @@ public class EnemyManager : MonoBehaviour
 
     private void MoveTowards()
     {
-        if (transform.rotation == targetRotation && !isTouchingPlayer)
+        if (transform.rotation == targetRotation)
         {
             transform.position = Vector3.MoveTowards(
                 transform.position,
                 player.position,
                 movementSpeed * Time.deltaTime
             );
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            isTouchingPlayer = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            isTouchingPlayer = false;
         }
     }
 }

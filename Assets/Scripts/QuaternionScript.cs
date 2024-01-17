@@ -26,8 +26,8 @@ public class QuaternionScript : MonoBehaviour
     {
         //RotateTowards();
         //QuaternionLookExample();
-        //LookAt();
-        Knockback();
+        LookAt();
+        //Knockback();
     }
 
     public void RotateTowards()
@@ -49,7 +49,7 @@ public class QuaternionScript : MonoBehaviour
             mouseLocation = Input.mousePosition;
             Debug.Log(mouseLocation);
         }
-        Quaternion targetRotation = Quaternion.LookRotation(mouseLocation - transform.position);
+        Quaternion targetRotation = Quaternion.LookRotation(target.transform.position - transform.position);
         transform.rotation = Quaternion.RotateTowards(
             transform.rotation,
             targetRotation,

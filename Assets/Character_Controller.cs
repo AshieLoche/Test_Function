@@ -33,7 +33,7 @@ public class Character_Controller : MonoBehaviour
         float moveVertical = Input.GetAxis("Vertical");
 
         Vector3 movement = new Vector3(moveHorizontal, 0, moveVertical).normalized;
-
+        
         if (!controller.isGrounded)
         {
             movement.y -= gravityForce * Time.deltaTime;
